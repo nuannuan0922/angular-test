@@ -7,8 +7,8 @@ export class HeroService {
 
   constructor() { }
 
-  getHeroes() : Hero[] {
-    return Heroes;
+  getHeroes() : Promise<Hero[]> {
+    return Promise.resolve(Heroes);
   }
 
 }
