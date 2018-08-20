@@ -27,14 +27,29 @@ export class HeroService {
     return Promise.reject(error.message || error);
   }
 
-  getHero(id: Number): Observable<Hero> {
+  
+  getHero(id: Number): Promise<Hero> {
+    const url = `${this.herosUrl}/${id}`;
     // TODO: send the message _after_ fetching the hero
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(Heroes.find(hero => hero.id === id))
+    this.log(`HeroService: fetched hero id=${id}`);
+    // return of(Heroes.find(hero => hero.id === id))
+    return this.http.get(url)
+                    .toPromise()
+                    .then((response) => {let tmpHero = response.json().data as Hero; console.log(tmpHero); return tmpHero})
+                    .catch(this.handleError);
   }
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
+  }
+
+  private headers = new Headers({'Content-Type': 'application/json'});
+  update(hero: Hero): Promise<Hero> {
+    const url = `${this.herosUrl}/${hero.id}`;
+    return this.http.put(url, JSON.stringify(hero), {headers: this.headers})
+                    .toPromise()
+                    .then(() => hero)
+                    .catch(this.handleError)
   }
 
 }
