@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简介</title>
+</head>
+<body>
+    <div ng-app="myapp">
+        <div ng-controller="myCtrl">
+            <p>input a: <input type="number" ng-model="a"></p>
+            <p>input b: <input type="number" ng-model="b"></p>
+            <p>a + b = {{a + b}}</p>
+        </div>
+        
+        <hr>
+
+        <div ng-controller="myCtrl_2">
+            <p>input a: <input type="number" ng-model="a"></p>
+            <p>input b: <input type="number" ng-model="b"></p>
+            <p>a + b = {{a + b}}</p>
+        </div>
+
+        <hr>
+        <p>------------------- ng-repeat ----------------------</p>
+        <div ng-controller="myCtrl_3">
+            <ul>
+                <li ng-repeat="name in names">{{name}}</li>
+            </ul>
+        </div>
+
+        <hr>
+        <p>------------------- ng-bind ----------------------</p>
+        <div ng-controller="myCtrl_4">
+            <p ng-bind="bind"></p>
+            <p>{{ bind }}</p>
+        </div>
+
+        <hr>
+        <p>------------------- 自定义 ----------------------</p>
+        <huo-chao-qun></huo-chao-qun>
+        <div huo-chao-qun></div>
+        <span>类名调用，必须要设置restrict： "c"</span>
+        <div class="huo-chao-qun-2"></div>
+        <!-- directive: huo-chao-qun-3 -->
+        <div huo-chao-qun-4></div>
+        <!-- <huo-chao-qun-4></huo-chao-qun-4> -->
+    </div>
+
+    <!-- <div ng-app="myapp-2" ng-controller="myCtrl_2">
+        <p>input a: <input type="number" ng-model="a"></p>
+        <p>input b: <input type="number" ng-model="b"></p>
+        <p>a + b = {{a + b}}</p>
+    </div> -->
+
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script>
+    var app = angular.module('myapp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.a = 20;
+        $scope.b = 30;
+    });
+    // var app2 = angular.module('myapp-2', []);
+    // app2.controller('myCtrl_2', function ($scope) {
+    //     $scope.a = 20;
+    //     $scope.b = 30;
+    // });
+    app.controller('myCtrl_2', function ($scope) {
+        $scope.a = 2;
+        $scope.b = 30;
+    });
+
+    app.controller('myCtrl_3', function ($scope) {
+        $scope.names = ['name1', 'name2', 'name3']
+    });
+
+    app.controller('myCtrl_4', function ($scope) {
+        $scope.bind = '<span>sdfsdf</span>'
+    });
+
+    app.directive('huoChaoQun', function () {
+        return {
+            template: '<h1>零零妖自定义组件</h1>'
+        }
+    })
+
+    // app.directive('huoChaoQun', {
+    //     template: '<h1>零零妖自定义组件</h1>'
+    // })
+
+    app.directive('huoChaoQun2', function () {
+        return {
+            restrict: "C",
+            template: '<h1>零零妖自定义组件</h1>'
+        }
+    })
+    app.directive('huoChaoQun3', function () {
+        return {
+            restrict: "M",
+            replace: true,
+            template: '<h1>零零妖自定义组件</h1>'
+        }
+    })
+    app.directive('huoChaoQun4', function () {
+        return {
+            restrict: "A",
+            template: '<h1>零零妖自定义组件</h1>'
+        }
+    })
+    </script>
+</body>
+</html>

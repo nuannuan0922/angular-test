@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简介</title>
+
+    <style>
+    input.ng-invalid {
+        background-color: lightblue;
+    }
+    </style>
+</head>
+<body>
+    <!-- <div ng-app="" ng-controller="myCtrl">
+        <form name="myform">
+            <input type="email" name="emailAddress" ng-model="text">
+            <span ng-show="myform.emailAddress.$error.email">不是一个合法的邮箱地址</span>
+        </form>
+    </div> -->
+
+    <!-- <form ng-app="" name="myForm2"  ng-init="myEmail = 'test@runoob.com'">
+        Email: <input type="email" name="myEmail" ng-model="myEmail" required>
+        <p>编辑邮箱地址，查看状态的改变。</p>
+        <h1>状态</h1>
+        <p>Valid: {{myForm2.myEmail.$valid}} (如果输入的值是合法的则为 true)。</p>
+        <p>Dirty: {{myForm2.myEmail.$dirty}} (如果值改变则为 true)。</p>
+        <p>Touched: {{myForm2.myEmail.$touched}} (如果通过触屏点击则为 true)。</p>
+    </form> -->
+
+    <form ng-app="" name="myForm">
+        输入你的名字:
+        <input name="myAddress" ng-model="text" type="email" required>
+    </form>
+
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script>
+    var app = angular.module('myapp', []);
+    app.controller('myCtrl', function ($scope) {
+        
+    });
+    </script>
+</body>
+</html>
