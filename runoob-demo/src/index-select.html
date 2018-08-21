@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angular select</title>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="personCtrl">
+        <h1>您选择的人是{{selectPerson.name}}, 他今年 {{selectPerson.age}} 岁</h1>
+        <select name="person" id="person" ng-model="selectPerson" ng-options="person.name for person in personList"></select>
+        <hr>
+        <h1>您选择的人是{{selectPerson2}}, 他今年 {{selectPerson2.age}} 岁</h1>
+        <select ng-model="selectPerson2">
+            <!-- <option ng-repeat="person in personList" value="{{person.age}}">{{person.name}}</option> -->
+            <option ng-repeat="person in personList">{{person.name}}</option>
+        </select>
+        <hr>
+        <h1>数据源是对象</h1>
+        <h1>您选择的人是{{selectedPerson3.name}}, 他今年 {{selectedPerson3.age}} 岁</h1>
+        <select ng-model="selectedPerson3" ng-options="value.name for (key, value) in personObjs"></select>
+    </div>
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="./index-select.js"></script>
+</body>
+</html>

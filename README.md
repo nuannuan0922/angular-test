@@ -53,3 +53,13 @@ angular test demo
         - $http
         - $timeout
         - $interval
+12. ng-options
+    - ng-options 选中的是一个对象
+    - ng-repeat 选中的是option的value
+    - 语法：
+        ```
+        ng-options="x for (x, y) in sites"
+        使用对象作为数据源, x 为键(key), y 为值(value):
+        ```
+13. ng-if、$even(奇) 、$odd(偶)、$index
+14. 

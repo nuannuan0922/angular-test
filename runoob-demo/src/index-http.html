@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简介</title>
+</head>
+<body>
+    <div ng-app="myapp">
+        <ul ng-controller="personCtrl">
+            <li ng-repeat="person in personList">
+                {{person.name + '今年' + person.age + '岁'}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="./index-http.js"></script>
+</body>
+</html>
