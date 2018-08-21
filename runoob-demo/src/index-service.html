@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简介</title>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="serviceCtrl">
+        <p>url: {{url}}</p>
+        <hr>
+        <p>自定义服务：</p>
+        <p>255 的 16 进制表示：{{hex255}}</p>
+        <input type="number" placeholder="请输入数字" ng-model="inputNum">
+        <p>输入数字的对应十六进制表示是： {{inputNum | toHex}}}</p>
+        <ul>
+            <li ng-repeat="num in nums">{{num + ' : ' + (num | toHex)}}</li>
+        </ul>
+        <hr>
+        <p>{{filterHtml}}</p>
+    </div>
+
+
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="./index-service.js"></script>
+</body>
+</html>
