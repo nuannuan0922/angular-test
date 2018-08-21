@@ -12,3 +12,44 @@ angular test demo
 7. 让构造函数保持简单，只做初始化操作，比如把构造函数的参数赋值给属性。 构造函数不应该做任何事。 
 8. == 官网最后的http没有看完 ==
 ### == TS RxJS 可能需要了解一下 ==
+
+# 菜鸟教程支持点汇总 [菜鸟教程链接](http://www.runoob.com/angularjs/angularjs-intro.html)
+1. ng-app
+    - 指明了应用, 定义了 AngularJS 应用程序的 根元素。
+    - 只能有一个
+    - 定义应用：
+        ```
+        var app = angular.module('myApp', []);
+        ```
+2. ng-model
+    - formName.inputName.$error.email 表单验证
+    - ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)
+    - ng-model 指令根据表单域的状态添加/移除以下类：ng-empty，ng-not-empty，ng-touched，ng-untouched，ng-valid，ng-invalid，ng-dirty，ng-pending，ng-pristine
+3. ng-bind
+4. ng-init
+5. {{}}
+    - 可以是表达式。它们可以包含文字、运算符和变量
+    - {{}} 和 bind 一样，可以解析html
+6. ng-controller: 指明了控制器, 一个应用可以有多个controller
+7. ng-repeat
+8. 自定义指令
+    - 定义：app.directive(name, fn);
+        - 使用驼峰法来命名一个指令， runoobDirective, 但在使用它时需要以 - 分割, runoob-directive:
+    - 调用：
+        - 元素名. 如果 restrict 设置为 ‘E’，则只能通过这种方式调用
+        - 属性. 如果 restrict 设置为 ‘A’，则只能通过这种方式调用
+        - 类名：类名调用，必须要设置restrict： "C"
+        - 注释：类名调用，必须要设置restrict： "M", replace: true
+9. $scope、$rootScope
+10. 过滤器：
+    - angularjs 的几个过滤器：currency, filter, lowercase, orderBy, uppercase
+    - 过滤器可以通过一个管道字符（|）和一个过滤器添加到表达式中。
+    - 过滤器可用于转换数据
+    - 可以过滤输入
+11. 服务：
+    - 在 AngularJS 中，服务是一个函数或对象
+    - 内建服务：
+        -  $location 服务，它可以返回当前页面的 URL 地址。
+        - $http
+        - $timeout
+        - $interval
