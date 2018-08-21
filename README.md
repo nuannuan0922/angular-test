@@ -62,4 +62,13 @@ angular test demo
         使用对象作为数据源, x 为键(key), y 为值(value):
         ```
 13. ng-if、$even(奇) 、$odd(偶)、$index
-14. 
+14. angular 指令和html属性关联：
+    - ng-disabled
+    - ng-show
+    - ng-hide
+15. ng-click
+16. 全局 api ：
+    - uppercase\lowercase
+    - isString()
+    - isNumber()
+    - 

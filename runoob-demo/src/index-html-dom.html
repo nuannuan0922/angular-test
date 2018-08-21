@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angular select</title>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="myctrl">
+        <p>
+            <button ng-disabled="mySwitch">点我</button>
+        </p>
+        <p ng-show="mySwitch">ng-show="mySwitch" --- 我可见吗？</p>
+        <p ng-hide="mySwitch">ng-hide="mySwitch" --- 我可见吗？</p>
+        <p>
+            <input type="checkbox" ng-model="mySwitch">按钮
+        </p>
+        {{mySwitch}}
+    </div>
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="./index-html-dom.js"></script>
+</body>
+</html>
