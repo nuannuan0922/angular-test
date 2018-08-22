@@ -71,4 +71,25 @@ angular test demo
     - uppercase\lowercase
     - isString()
     - isNumber()
-    - 
+17. ng-include
+18. 依赖注入：
+    - value -- 配置阶段
+    - factory --- 可以用在service\controller中，在需要时创建
+    - provider  -- 配置阶段
+    - constant -- 配置阶段
+19. 路由
+    - 语法
+        ```
+        $routeProvider.when(url, {
+            template: string, // 如果我们只需要在 ng-view 中插入简单的 HTML 内容，则使用该参数：
+            templateUrl: string, // 如果我们只需要在 ng-view 中插入 HTML 模板文件，则使用该参数：
+            controller: string, function 或 array, // function、string或数组类型，在当前模板上执行的 controller函数，生成新的scope。
+            controllerAs: string, // 为controller指定别名。
+            redirectTo: string, function,  // 重定向的地址。
+            resolve: object<key, function> // 指定当前controller所依赖的其他模块。
+        });
+        ```
+
+# 遗留问题（可能不需要解决）
+1. 其余api
+2. 每个api每个参数的含义
