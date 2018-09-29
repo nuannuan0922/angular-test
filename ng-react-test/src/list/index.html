@@ -1,0 +1,8 @@
+<h2>这是列表页！</h2>
+<div>
+    <ul>
+        <li ng-repeat="item in list track by item.id" ng-click="goToDetail(event, item.id)">
+            <a href="#!/detail/{{item.id}}">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

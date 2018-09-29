@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script src="https://cdn.bootcss.com/angular.js/1.7.0/angular.min.js"></script>
+    <script src="./libs/angular-router.js"></script>
+</head>
+<body>
+    <div ng-app="yigemingzi">
+        <div>这就是一个title</div>
+        <div>
+            <ul>
+                <!-- <li ng-repeat="nav in navs" ng-bind="nav.name" ></li> -->
+                <li><a href="#!/">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+            </ul>
+        </div>
+        <div ng-view></div>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
